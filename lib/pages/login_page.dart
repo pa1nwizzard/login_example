@@ -20,8 +20,25 @@ class _LoginPageState extends State<LoginPage> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             LoginAppBar(),
+            SizedBox(height: 100),
             LoginField(),
-            SizedBox(height: 100,)
+            TextButton(
+              onPressed: () {},
+              style: TextButton.styleFrom(
+                foregroundColor: Colors.black,
+                padding: EdgeInsets.zero,
+                minimumSize: Size(0, 0),
+                
+              ),
+              child: Text(
+                'Forgot password?',
+                style: TextStyle(
+                  fontSize: 16,
+                  decoration: TextDecoration.underline,
+                ),
+              ),
+            ),
+            SizedBox(height: 150)
           ],
         ),
       ),

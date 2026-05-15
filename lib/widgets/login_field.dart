@@ -30,7 +30,7 @@ class _LoginFieldState extends State<LoginField> {
               fontSize: 18,
               color: Colors.black
             ),
-            decoration: AppColors().inpDec(hintText: "Enter login"),
+            decoration: Decors().inpDec(hintText: "Enter login"),
           ),
         ),
         SizedBox(height: 10),
@@ -48,7 +48,7 @@ class _LoginFieldState extends State<LoginField> {
             ]
           ),
           child: TextField(
-            decoration: AppColors().inpDec(hintText: "Enter password"),
+            decoration: Decors().inpDec(hintText: "Enter password"),
           ),
         ),
         SizedBox(height: 20),
@@ -57,9 +57,9 @@ class _LoginFieldState extends State<LoginField> {
           height: 60,
           child: ElevatedButton(
             onPressed: () {},
-            style: AppColors().btnStyle(),
+            style: Decors().loginBtnStyle(),
             child: Text(
-              "Login",
+              "Sign in",
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.w700,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class AppColors {
+class Decors {
 
   // -- input styles --
   InputDecoration inpDec({String? hintText}) {
@@ -35,11 +35,12 @@ class AppColors {
   }
 
   // -- button styles --
-  ButtonStyle btnStyle() {
+  ButtonStyle loginBtnStyle() {
     return ElevatedButton.styleFrom(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
       backgroundColor: Colors.black,
       elevation: 4
     );
   }
+  
 }
