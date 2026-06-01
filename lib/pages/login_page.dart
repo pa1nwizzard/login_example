@@ -2,14 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:login_example/widgets/login_app_bar.dart';
 import 'package:login_example/widgets/login_field.dart';
 
-class LoginPage extends StatefulWidget {
+class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
 
-  @override
-  State<LoginPage> createState() => _LoginPageState();
-}
-
-class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,6 +39,4 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
   }
-
-  
 }

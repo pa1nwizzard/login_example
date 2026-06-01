@@ -35,10 +35,10 @@ class Decors {
   }
 
   // -- button styles --
-  ButtonStyle loginBtnStyle() {
+  ButtonStyle loginBtnStyle(Color? color) {
     return ElevatedButton.styleFrom(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
-      backgroundColor: Colors.black,
+      backgroundColor: color ?? Colors.black,
       elevation: 4
     );
   }
