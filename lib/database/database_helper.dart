@@ -28,6 +28,23 @@ Future<void> insertUser(User user) async {
   );
 }
 
+Future<void> deleteUser(User user) async {
+  final db = await database;
+  await db.delete(
+    'users',
+    where: 'id = ?',
+    whereArgs: [user.id]
+  );
+}
 
+Future<void> updateUser(User user) async {
+  final db = await database;
+  await db.update(
+    'users',
+    user.toMap(),
+    where: 'id = ?',
+    whereArgs: [user.id]
+  );
+}
 
 final Future<Database> database = initDatabase();
