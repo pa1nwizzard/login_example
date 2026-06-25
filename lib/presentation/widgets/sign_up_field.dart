@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:login_example/database/database_helper.dart';
+import 'package:login_example/models/user.dart';
+import 'package:login_example/presentation/pages/profile_page.dart';
 import 'package:login_example/utils/constants.dart';
 
 class SignUpField extends StatefulWidget {
@@ -15,6 +18,19 @@ class _SignUpFieldState extends State<SignUpField> {
 
   @override
   Widget build(BuildContext context) {
+
+    void signUpPressed() {
+      String login = loginController.text;
+      String password = passwordController.text;
+      User newUser = User(login: login, password: password);
+      insertUser(newUser);
+      Navigator.of(context).push(
+        MaterialPageRoute<void>(
+          builder: (context) => const ProfilePage(),
+        )
+      );
+    }
+
     return Column(
       children: [
         Container(
@@ -87,7 +103,7 @@ class _SignUpFieldState extends State<SignUpField> {
           width: double.infinity,
           height: 60,
           child: ElevatedButton(
-            onPressed: () {},
+            onPressed: signUpPressed,
             style: Decors().loginBtnStyle(Colors.black),
             child: Text(
               "Sign up",

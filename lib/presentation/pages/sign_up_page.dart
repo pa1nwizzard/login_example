@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:login_example/widgets/login_app_bar.dart';
-import 'package:login_example/widgets/login_field.dart';
+import 'package:login_example/presentation/pages/login_page.dart';
+import 'package:login_example/presentation/widgets/sign_up_app_bar.dart';
+import 'package:login_example/presentation/widgets/sign_up_field.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+class SignUpPage extends StatefulWidget {
+  const SignUpPage({super.key});
 
+  @override
+  State<SignUpPage> createState() => _SignUpPageState();
+}
+
+class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,11 +20,17 @@ class LoginPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            LoginAppBar(),
-            SizedBox(height: 100),
-            LoginField(),
+            SignUpAppBar(),
+            SizedBox(height: 20),
+            SignUpField(),
             TextButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute<void>(
+                    builder: (context) => const LoginPage(),
+                  )
+                );
+              },
               style: TextButton.styleFrom(
                 foregroundColor: Colors.black,
                 padding: EdgeInsets.zero,
@@ -26,14 +38,14 @@ class LoginPage extends StatelessWidget {
                 
               ),
               child: Text(
-                'Forgot password?',
+                'Sign in',
                 style: TextStyle(
                   fontSize: 16,
                   decoration: TextDecoration.underline,
                 ),
               ),
             ),
-            SizedBox(height: 150)
+            SizedBox(height: 100)
           ],
         ),
       ),

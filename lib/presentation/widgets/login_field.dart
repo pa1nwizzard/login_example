@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:login_example/pages/sign_up_page.dart';
-import '../utils/constants.dart';
+import 'package:login_example/presentation/pages/sign_up_page.dart';
+import '../../utils/constants.dart';
 
 class LoginField extends StatelessWidget {
   const LoginField({super.key}); 

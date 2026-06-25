@@ -6,14 +6,14 @@ import 'package:sqflite/sqflite.dart';
 Future<Database> initDatabase() async {
   final path = join(
     await getDatabasesPath(),
-    'operations_db.db',
+    'users_db.db',
   );
   return openDatabase(
     path,
     version: 1,
     onCreate: (db, version) async {
       await db.execute(
-        'CREATE TABLE operations(id INTEGER PRIMARY KEY, type TEXT, category TEXT, count DOUBLE, date TEXT)'
+        'CREATE TABLE users(id INTEGER PRIMARY KEY AUTOINCREMENT, login TEXT, password TEXT)'
       );     
     },
   );
@@ -24,7 +24,7 @@ Future<void> insertUser(User user) async {
   await db.insert(
     'users',
     user.toMap(),
-    conflictAlgorithm: ConflictAlgorithm.replace  
+    //conflictAlgorithm: ConflictAlgorithm.replace  
   );
 }
 

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:login_example/widgets/profile_app_bar.dart';
+import 'package:login_example/presentation/widgets/profile_app_bar.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -16,6 +16,7 @@ class _ProfilePageState extends State<ProfilePage> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           ProfileAppBar(),
+          
         ]
       ),
     );

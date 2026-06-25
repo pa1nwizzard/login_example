@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:login_example/pages/login_page.dart';
+import 'package:login_example/presentation/pages/login_page.dart';
 
-void main() {
+void main() async {
   runApp(const MainApp());
 }
 
