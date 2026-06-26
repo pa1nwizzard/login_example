@@ -47,4 +47,17 @@ Future<void> updateUser(User user) async {
   );
 }
 
+Future<User?> getUser(String login, String password) async{
+  final db = await database;
+  final List<Map<String, dynamic>> maps = await db.query(
+    'users',
+    where: 'login = ? AND password = ?',
+    whereArgs: [login, password]
+  );
+  if (maps.isNotEmpty) {
+    return User.fromMap(maps.first);
+  }
+  return null;
+}
+
 final Future<Database> database = initDatabase();

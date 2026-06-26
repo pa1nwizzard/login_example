@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:login_example/database/database_helper.dart';
 import 'package:login_example/models/user.dart';
 import 'package:login_example/presentation/pages/profile_page.dart';
+import 'package:login_example/providers/user_provider.dart';
 import 'package:login_example/utils/constants.dart';
+import 'package:provider/provider.dart';
 
 class SignUpField extends StatefulWidget {
   const SignUpField({super.key});
@@ -23,7 +24,7 @@ class _SignUpFieldState extends State<SignUpField> {
       String login = loginController.text;
       String password = passwordController.text;
       User newUser = User(login: login, password: password);
-      insertUser(newUser);
+      Provider.of<UserProvider>(context, listen: false).addUser(newUser);
       Navigator.of(context).push(
         MaterialPageRoute<void>(
           builder: (context) => const ProfilePage(),

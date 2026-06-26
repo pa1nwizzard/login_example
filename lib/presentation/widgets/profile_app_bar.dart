@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:login_example/providers/user_provider.dart';
+import 'package:provider/provider.dart';
 
 class ProfileAppBar extends StatelessWidget {
   const ProfileAppBar({super.key});
@@ -16,7 +18,7 @@ class ProfileAppBar extends StatelessWidget {
         children: [
           SizedBox(height: 50),
           Text(
-            'Welcome, user!',
+            'Welcome, ${Provider.of<UserProvider>(context).user?.login}!',
             style: TextStyle(
               color: Colors.black,
               fontSize: 20,
